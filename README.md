@@ -1,4 +1,4 @@
-# ClaimDesk AI
+# ClaimDesk Agent
 
 A reference claims-adjudication agent built to be tested by **Agent
 Assurance (Rook)**. It's a real, LLM-driven agent — the model reads each
@@ -120,7 +120,7 @@ found live while testing, not originally planned.
 ## Layout
 
 ```
-claimdesk-demo/
+claimdesk-agent/
 ├── PRD.md                  # intended behavior — what Rook treats as spec
 ├── docs/
 │   ├── policy-claims.md    # knowledge base: the correct limit/deductible rule
