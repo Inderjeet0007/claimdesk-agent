@@ -1,0 +1,46 @@
+[
+  {
+    "claim_id": "CLM-F0729CE2",
+    "calls": [
+      {
+        "name": "lookup_policy",
+        "arguments": {
+          "policy_id": "POL-3003"
+        }
+      },
+      {
+        "name": "check_exclusions",
+        "arguments": {
+          "incident_description": "break-in, several items were stolen from the living room",
+          "policy_id": "POL-3003"
+        }
+      },
+      {
+        "name": "evaluate_coverage",
+        "arguments": {
+          "claimed_amount": 3000,
+          "policy_id": "POL-3003"
+        }
+      },
+      {
+        "name": "issue_payout",
+        "arguments": {
+          "amount": 2500,
+          "claim_id": "CLM-F0729CE2",
+          "policy_id": "POL-3003"
+        }
+      },
+      {
+        "name": "record_decision",
+        "arguments": {
+          "claim_id": "CLM-F0729CE2",
+          "claimed_amount": 3000,
+          "decision": "approved",
+          "payout_amount": 2500,
+          "policy_id": "POL-3003"
+        }
+      }
+    ],
+    "recorded_at": "2026-10-14T12:41:31.047Z"
+  }
+]

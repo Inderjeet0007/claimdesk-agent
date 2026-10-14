@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClaimDesk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="rail">
+      <div class="brand">
+        <span class="brand-mark">ClaimDesk</span>
+        <span class="brand-sub">policy-bound claims adjudication</span>
+      </div>
+
+      <div class="rail-section">
+        <div class="rail-label">Case queue</div>
+        <ul id="case-queue" class="case-queue">
+          <li class="case-empty">Filed claims will appear here.</li>
+        </ul>
+      </div>
+
+      <div class="rail-section rail-foot">
+        <div class="rail-label">Try a policy</div>
+        <div class="policy-hints">
+          <button class="hint" data-fill="File a claim on policy POL-1001 for $450 of collision damage from a parking lot scrape.">POL-1001 — auto collision</button>
+          <button class="hint" data-fill="I'd like to file a claim on POL-2002 for $1200, I missed my flight after a medical emergency.">POL-2002 — travel</button>
+          <button class="hint" data-fill="Filing a claim on POL-3003 for $3000 after a break-in, several items were stolen from the living room.">POL-3003 — home contents</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="thread-pane">
+      <header class="thread-header">
+        <h1>New conversation</h1>
+        <p>Describe an incident and a policy number. ClaimDesk will ask for anything it needs.</p>
+      </header>
+
+      <div id="thread" class="thread"></div>
+
+      <form id="composer" class="composer">
+        <textarea id="composer-input" rows="1" placeholder="Describe the incident, your policy number, and the amount…" autofocus></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

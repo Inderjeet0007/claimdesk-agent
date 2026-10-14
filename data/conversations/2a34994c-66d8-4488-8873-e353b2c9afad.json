@@ -1,0 +1,108 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Filing a claim on POL-3003 for $3000 after a break-in, several items were stolen from the living room."
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_061f18f4-ad49-4a08-8be4-21c2cec5c232",
+          "type": "function",
+          "function": {
+            "name": "lookup_policy",
+            "arguments": "{\"policy_id\":\"POL-3003\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_061f18f4-ad49-4a08-8be4-21c2cec5c232",
+      "content": "{\"found\":true,\"policy_id\":\"POL-3003\",\"coverage_type\":\"home_contents\",\"coverage_limit\":10000,\"deductible\":500,\"requires_identity_verification\":false,\"exclusions\":[\"flood\",\"intentional damage\",\"business equipment\"]}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_f00f8e0e-9ba4-4334-9ec5-075b78163fb1",
+          "type": "function",
+          "function": {
+            "name": "check_exclusions",
+            "arguments": "{\"incident_description\":\"break-in, several items were stolen from the living room\",\"policy_id\":\"POL-3003\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_f00f8e0e-9ba4-4334-9ec5-075b78163fb1",
+      "content": "{\"excluded\":false,\"exclusion\":null}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_bf742a70-96be-4476-be45-98cf58ba71eb",
+          "type": "function",
+          "function": {
+            "name": "evaluate_coverage",
+            "arguments": "{\"claimed_amount\":3000,\"policy_id\":\"POL-3003\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_bf742a70-96be-4476-be45-98cf58ba71eb",
+      "content": "{\"within_limit\":true,\"payout_amount\":2500,\"coverage_limit\":10000,\"deductible\":500}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_54367cc4-2727-465a-9f1e-8714569eccc4",
+          "type": "function",
+          "function": {
+            "name": "issue_payout",
+            "arguments": "{\"amount\":2500,\"claim_id\":\"CLM-F0729CE2\",\"policy_id\":\"POL-3003\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_54367cc4-2727-465a-9f1e-8714569eccc4",
+      "content": "{\"issued\":true,\"claim_id\":\"CLM-F0729CE2\",\"policy_id\":\"POL-3003\",\"amount\":2500,\"issued_at\":\"2026-10-14T12:41:29.558Z\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_9ec90346-e9b6-4af0-a544-b50d26f272f0",
+          "type": "function",
+          "function": {
+            "name": "record_decision",
+            "arguments": "{\"claim_id\":\"CLM-F0729CE2\",\"claimed_amount\":3000,\"decision\":\"approved\",\"payout_amount\":2500,\"policy_id\":\"POL-3003\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_9ec90346-e9b6-4af0-a544-b50d26f272f0",
+      "content": "{\"recorded\":true}"
+    },
+    {
+      "role": "assistant",
+      "content": "Your claim for $3,000 has been approved. After applying your policy’s deductible, a payout of $2,500 will be issued to you shortly. If you have any questions or need further assistance, please let us know."
+    }
+  ],
+  "claimId": "CLM-F0729CE2"
+}

@@ -1,0 +1,135 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "I'd like to file a claim on POL-2002 for $1200, I missed my flight after a medical emergency."
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_bdb6a3a7-1102-43cd-adb4-b943087a5f54",
+          "type": "function",
+          "function": {
+            "name": "lookup_policy",
+            "arguments": "{\"policy_id\":\"POL-2002\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_bdb6a3a7-1102-43cd-adb4-b943087a5f54",
+      "content": "{\"found\":true,\"policy_id\":\"POL-2002\",\"coverage_type\":\"travel_insurance\",\"coverage_limit\":5000,\"deductible\":0,\"requires_identity_verification\":true,\"exclusions\":[\"pre-existing condition\",\"war\",\"self-inflicted injury\"]}"
+    },
+    {
+      "role": "assistant",
+      "content": "Could you please provide either your date of birth or the last four digits of the ID we have on file? This will let us verify your identity before we proceed with the claim."
+    },
+    {
+      "role": "user",
+      "content": "DOB: 1991-11-02 and last 4 digit of the policy id: 2204"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_fffd3cc4-429b-40a4-9cdc-fb2f09ad2ab9",
+          "type": "function",
+          "function": {
+            "name": "verify_identity",
+            "arguments": "{\"policy_id\":\"POL-2002\",\"provided_info\":\"DOB: 1991-11-02 and last 4 digit of the policy id: 2204\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_fffd3cc4-429b-40a4-9cdc-fb2f09ad2ab9",
+      "content": "{\"verified\":true}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_486190f5-826c-420c-9552-02509e5060a0",
+          "type": "function",
+          "function": {
+            "name": "check_exclusions",
+            "arguments": "{\"incident_description\":\"I missed my flight after a medical emergency.\",\"policy_id\":\"POL-2002\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_486190f5-826c-420c-9552-02509e5060a0",
+      "content": "{\"excluded\":false,\"exclusion\":null}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_d916b848-53da-4829-b292-29399e925df3",
+          "type": "function",
+          "function": {
+            "name": "evaluate_coverage",
+            "arguments": "{\"claimed_amount\":1200,\"policy_id\":\"POL-2002\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_d916b848-53da-4829-b292-29399e925df3",
+      "content": "{\"within_limit\":true,\"payout_amount\":1200,\"coverage_limit\":5000,\"deductible\":0}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_368a7efc-ea5e-4912-a5ac-06e4c665ce9c",
+          "type": "function",
+          "function": {
+            "name": "issue_payout",
+            "arguments": "{\"amount\":1200,\"claim_id\":\"CLM-1204E5B1\",\"policy_id\":\"POL-2002\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_368a7efc-ea5e-4912-a5ac-06e4c665ce9c",
+      "content": "{\"issued\":true,\"claim_id\":\"CLM-1204E5B1\",\"policy_id\":\"POL-2002\",\"amount\":1200,\"issued_at\":\"2026-10-14T12:18:33.679Z\"}"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "fc_da5cb4d1-f4b6-42ac-9183-a92ef9bf3880",
+          "type": "function",
+          "function": {
+            "name": "record_decision",
+            "arguments": "{\"claim_id\":\"CLM-1204E5B1\",\"claimed_amount\":1200,\"decision\":\"approved\",\"payout_amount\":1200,\"policy_id\":\"POL-2002\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "fc_da5cb4d1-f4b6-42ac-9183-a92ef9bf3880",
+      "content": "{\"recorded\":true}"
+    },
+    {
+      "role": "assistant",
+      "content": "Your claim for $1,200 has been approved and the payout has been issued to your account. If you have any further questions or need additional assistance, please let us know. Thank you for choosing us."
+    }
+  ],
+  "claimId": "CLM-1204E5B1"
+}

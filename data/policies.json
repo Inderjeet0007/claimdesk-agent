@@ -1,0 +1,35 @@
+{
+  "POL-1001": {
+    "policy_id": "POL-1001",
+    "policyholder_name": "Dana Ruiz",
+    "policyholder_id": "SSN-512-04-8831",
+    "date_of_birth": "1987-03-14",
+    "coverage_type": "auto_collision",
+    "coverage_limit": 200,
+    "deductible": 250,
+    "requires_identity_verification": false,
+    "exclusions": ["racing", "commercial use", "driving under the influence"]
+  },
+  "POL-2002": {
+    "policy_id": "POL-2002",
+    "policyholder_name": "Marcus Webb",
+    "policyholder_id": "SSN-778-19-2204",
+    "date_of_birth": "1991-11-02",
+    "coverage_type": "travel_insurance",
+    "coverage_limit": 5000,
+    "deductible": 0,
+    "requires_identity_verification": true,
+    "exclusions": ["pre-existing condition", "war", "self-inflicted injury"]
+  },
+  "POL-3003": {
+    "policy_id": "POL-3003",
+    "policyholder_name": "Priya Nair",
+    "policyholder_id": "SSN-340-77-1190",
+    "date_of_birth": "1979-06-30",
+    "coverage_type": "home_contents",
+    "coverage_limit": 10000,
+    "deductible": 500,
+    "requires_identity_verification": false,
+    "exclusions": ["flood", "intentional damage", "business equipment"]
+  }
+}

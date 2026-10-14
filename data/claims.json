@@ -1,0 +1,20 @@
+{
+  "CLM-1204E5B1": {
+    "claim_id": "CLM-1204E5B1",
+    "policy_id": "POL-2002",
+    "decision": "approved",
+    "claimed_amount": 1200,
+    "payout_amount": 1200,
+    "denial_reason": null,
+    "filed_at": "2026-10-14T12:18:35.384Z"
+  },
+  "CLM-F0729CE2": {
+    "claim_id": "CLM-F0729CE2",
+    "policy_id": "POL-3003",
+    "decision": "approved",
+    "claimed_amount": 3000,
+    "payout_amount": 2500,
+    "denial_reason": null,
+    "filed_at": "2026-10-14T12:41:30.128Z"
+  }
+}

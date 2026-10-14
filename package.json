@@ -1,0 +1,14 @@
+{
+  "name": "claimdesk-demo",
+  "version": "1.0.0",
+  "description": "ClaimDesk AI - reference claims-adjudication agent for Agent Assurance (Rook) demos",
+  "type": "module",
+  "main": "server/index.mjs",
+  "scripts": {
+    "start": "node server/index.mjs",
+    "dev": "node --watch server/index.mjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

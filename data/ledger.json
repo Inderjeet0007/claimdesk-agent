@@ -1,0 +1,14 @@
+[
+  {
+    "claim_id": "CLM-1204E5B1",
+    "policy_id": "POL-2002",
+    "amount": 1200,
+    "issued_at": "2026-10-14T12:18:33.679Z"
+  },
+  {
+    "claim_id": "CLM-F0729CE2",
+    "policy_id": "POL-3003",
+    "amount": 2500,
+    "issued_at": "2026-10-14T12:41:29.558Z"
+  }
+]

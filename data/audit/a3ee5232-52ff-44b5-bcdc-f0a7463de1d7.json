@@ -1,0 +1,59 @@
+[
+  {
+    "claim_id": "CLM-1204E5B1",
+    "calls": [
+      {
+        "name": "lookup_policy",
+        "arguments": {
+          "policy_id": "POL-2002"
+        }
+      }
+    ],
+    "recorded_at": "2026-10-14T12:14:46.963Z"
+  },
+  {
+    "claim_id": "CLM-1204E5B1",
+    "calls": [
+      {
+        "name": "verify_identity",
+        "arguments": {
+          "policy_id": "POL-2002",
+          "provided_info": "DOB: 1991-11-02 and last 4 digit of the policy id: 2204"
+        }
+      },
+      {
+        "name": "check_exclusions",
+        "arguments": {
+          "incident_description": "I missed my flight after a medical emergency.",
+          "policy_id": "POL-2002"
+        }
+      },
+      {
+        "name": "evaluate_coverage",
+        "arguments": {
+          "claimed_amount": 1200,
+          "policy_id": "POL-2002"
+        }
+      },
+      {
+        "name": "issue_payout",
+        "arguments": {
+          "amount": 1200,
+          "claim_id": "CLM-1204E5B1",
+          "policy_id": "POL-2002"
+        }
+      },
+      {
+        "name": "record_decision",
+        "arguments": {
+          "claim_id": "CLM-1204E5B1",
+          "claimed_amount": 1200,
+          "decision": "approved",
+          "payout_amount": 1200,
+          "policy_id": "POL-2002"
+        }
+      }
+    ],
+    "recorded_at": "2026-10-14T12:18:36.541Z"
+  }
+]
